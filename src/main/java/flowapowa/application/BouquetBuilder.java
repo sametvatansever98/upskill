@@ -1,11 +1,9 @@
 package flowapowa.application;
 
-import flowapowa.forGettingPrices.DeprecatedProvider;
-
 public class BouquetBuilder {
-    private final DeprecatedProvider priceProvider;
+    private final Provider priceProvider;
 
-    public BouquetBuilder(DeprecatedProvider priceProvider) {
+    public BouquetBuilder(Provider priceProvider) {
         this.priceProvider = priceProvider;
     }
 
@@ -13,7 +11,7 @@ public class BouquetBuilder {
         Bouquet bouquet = new Bouquet(crafting);
 
         for (Recipe.Element element :
-                recipe) {
+            recipe) {
             bouquet.add(element, priceProvider);
         }
 
